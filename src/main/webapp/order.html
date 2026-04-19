@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>外卖平台 - 首页</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; padding: 20px; }
+        h1 { color: #333; }
+        h2 { color: #666; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        form { background: #f9f9f9; padding: 15px; border-radius: 5px; }
+        input[type="text"], input[type="number"] { padding: 8px; margin: 5px 0; width: 200px; }
+        input[type="submit"] { padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        input[type="submit"]:hover { background: #45a049; }
+        a { color: #2196F3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .menu-link { display: inline-block; margin-top: 10px; padding: 10px; background: #e7f3ff; border-radius: 5px; }
+    </style>
 </head>
 <body>
 <h1>欢迎来外卖平台</h1>
 
+<div class="menu-link">
+    <a href="/menu">查看菜单</a>
+    | <a href="/orders">我的订单</a>
+</div>
+
 <h2>新增订单</h2>
 
 <form action="/order" method="post">
-    用户: <input name="customer"><br>
-    食物: <input name="food"><br>
-    数量: <input name="quantity"><br>
-    <input type="submit">
+    用户: <input name="customer" required><br>
+    食物: <input name="food" required><br>
+    数量: <input type="number" name="quantity" min="1" required><br>
+    <input type="submit" value="提交订单">
 </form>
 
 </body>
